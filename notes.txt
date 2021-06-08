@@ -10,3 +10,12 @@ Do we build all 8 of these mentioned?
 https://elevenfifty.instructure.com/courses/694/pages/8-dot-2-building-a-model?module_item_id=58217#:~:text=let's%20start%20by%20adding%20a%20user.js%20file%20to%20the%20models%20folder%20so%20we%20can%20begin%20to%20build%20out%20our%20journal%20app%3A
 This image shows a "services" folder. I don't believe we use a services folder in this walkthrough.
 
+https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-2-user-controller-challenge-solution?module_item_id=58221#:~:text=out-,controllers%2Findex.js,-1
+Image shows controller files camelCased, but instructions on making them was not camelCased.
+
+https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-2-user-controller-challenge-solution?module_item_id=58221#:~:text=we%20import%20the%20usercontroller.js%20and%20assign%20it%20to%20a%20variable%20called%20usercontroller%20and%20at%20the%20same
+The instructions refer to the controller file name consistent with how students were instructed to make them.
+
+https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-2-user-controller-challenge-solution?module_item_id=58221#:~:text=when%20we%20use%20require(%20'%20.%20%2Ffoldername%2Ffilename%20'%20)%20such%20as%20on%20line%206%20to%20access%20information%2C%20we%20are
+Refers to line 6, but material is on line 7.
+
