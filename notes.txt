@@ -1,3 +1,12 @@
 https://elevenfifty.instructure.com/courses/694/pages/2-dot-3-starting-up-the-server?module_item_id=58195#:~:text=type%20in%20npx%20nodemon%20and%20hit%20enter.
 Has them run npx nodemon, module has them list nodemon as a dev dependency, but doesn't have them globally install it.
 
+https://elevenfifty.instructure.com/courses/694/pages/6-dot-3-creating-a-local-database-in-pgadmin?module_item_id=58214#:~:text=in%20your%20terminal%20in%20the%20appropriate%20directory%2C%20start%20your%20server%20with%20either%20npm%20start%20or%20npm%20run%20dev.
+starting server with "npm start" or "npm run dev" not consistent with "nodemon"
+
+https://elevenfifty.instructure.com/courses/694/pages/7-dot-1-what-is-mvc?module_item_id=58215#:~:text=we'll%20be%20building%20the%20following%20endpoints%20in%20the%20modules%20ahead%3A
+Do we build all 8 of these mentioned?
+
+https://elevenfifty.instructure.com/courses/694/pages/8-dot-2-building-a-model?module_item_id=58217#:~:text=let's%20start%20by%20adding%20a%20user.js%20file%20to%20the%20models%20folder%20so%20we%20can%20begin%20to%20build%20out%20our%20journal%20app%3A
+This image shows a "services" folder. I don't believe we use a services folder in this walkthrough.
+
