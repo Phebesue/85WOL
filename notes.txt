@@ -1,0 +1,3 @@
+https://elevenfifty.instructure.com/courses/694/pages/2-dot-3-starting-up-the-server?module_item_id=58195#:~:text=type%20in%20npx%20nodemon%20and%20hit%20enter.
+Has them run npx nodemon, module has them list nodemon as a dev dependency, but doesn't have them globally install it.
+
