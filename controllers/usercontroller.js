@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../db");
 const { UserModel } = require("../models");
-const {UniqueConstraintError}= require("sequelize/lib/errors");
+const { UniqueConstraintError } = require("sequelize/lib/errors");
 
 router.post("/register", async (req, res) => {
   let { username, passwordhash } = req.body.user;
@@ -28,7 +28,13 @@ router.post("/register", async (req, res) => {
   }
 });
 router.post("/login", async (req, res) => {
-  
-})
+  let { username, passwordhash } = req.body.user;
+
+  await UserModel.findOne({
+    where: {
+      email: email,
+    },
+  });
+});
 
 module.exports = router;
