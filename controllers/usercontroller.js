@@ -2,15 +2,18 @@ const router = require("express").Router();
 const { UserModel } = require("../models");
 
 router.post("/register", async (req, res) => {
+  
+  let { username, passwordhash } = req.body.user;
 
-   let{username, passwordhash}  = req.body.user;
-
-  await UserModel.create({
+  let User = await UserModel.create({
     username,
-    passwordhash
+    passwordhash,
   });
 
-  res.send("This is our user/register endpoint!");
+  res.status(201).json({
+    message: "User sucessfully registered",
+    user: User,
+  });
 });
 
 module.exports = router;

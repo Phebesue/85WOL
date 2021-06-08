@@ -19,3 +19,5 @@ The instructions refer to the controller file name consistent with how students 
 https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-2-user-controller-challenge-solution?module_item_id=58221#:~:text=when%20we%20use%20require(%20'%20.%20%2Ffoldername%2Ffilename%20'%20)%20such%20as%20on%20line%206%20to%20access%20information%2C%20we%20are
 Refers to line 6, but material is on line 7.
 
+https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-5-json-response?module_item_id=58226#:~:text=still%20in%20the%20usercontroller.js%20file%2C%20update%20the%20response%20object.
+Line 8 added "let User =" but it is not bolded to indicate it is an addition
