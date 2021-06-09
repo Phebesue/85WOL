@@ -36,15 +36,22 @@ router.post("/login", async (req, res) => {
       username: username,
     },
   });
-  res.status(200).json({
-    user:loginUser,
-    message: "User successfully logged in!"
-  });
+
+  if (loginUser){
+    res.status(200).json({
+      user:loginUser,
+      message: "User successfully logged in!"
+    });
+  } else {
+    res.status(4.1).json({
+      message:'Login failed'
+    });
+  }
 } catch (error) {
-  res.status(500).json({
-    message: "Failed to log user in"
-  })
-}
+    res.status(500).json({
+      message: "Failed to log user in"
+    })
+  }
 });
 
 module.exports = router;
