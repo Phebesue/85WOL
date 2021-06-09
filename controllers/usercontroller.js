@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../db");
 const { UserModel } = require("../models");
 const {UniqueConstraintError}= require("sequelize/lib/errors");
 
