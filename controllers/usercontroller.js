@@ -44,17 +44,27 @@ router.post("/login", async (req, res) => {
 
     if (loginUser) {
 
-      let token = jwt.sign({ id: loginUser.id }, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
+      let passwordComparison = await bcrypt.compare(passwordhash, loginUser.passwordhash);
 
-      res.status(200).json({
-        user: loginUser,
-        message: "User successfully logged in!",
-        sessionToken: token
-      });
-    } else {
-      res.status(4.1).json({
-        message: "Login failed",
-      });
+      if (passwordComparison) {
+
+        let token = jwt.sign({ id: loginUser.id }, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
+        
+        res.status(200).json({
+          user: loginUser,
+          message: "User successfully logged in!",
+          sessionToken: token,
+        });
+      } else {
+        res.status(401).json({
+          message: "Incorrect username or password"
+        })
+      }
+      
+      } else {
+        res.status(401).json({
+          message: "Incorrect username or password"
+        });
     }
   } catch (error) {
     res.status(500).json({
