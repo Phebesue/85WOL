@@ -30,6 +30,7 @@ router.post("/register", async (req, res) => {
     }
   }
 });
+
 router.post("/login", async (req, res) => {
   let { username, passwordhash } = req.body.user;
 
@@ -41,9 +42,13 @@ router.post("/login", async (req, res) => {
     });
 
     if (loginUser) {
+
+      let token = jwt.sign({ id: loginUser.id }, "I_am_secret", {expiresIn: 60 * 60 * 24});
+
       res.status(200).json({
         user: loginUser,
         message: "User successfully logged in!",
+        sessionToken: token
       });
     } else {
       res.status(4.1).json({
