@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { UserModel } = require("../models");
 const { UniqueConstraintError } = require("sequelize/lib/errors");
+const jwt = require("jsonwebtoken");
 
 router.post("/register", async (req, res) => {
   let { username, passwordhash } = req.body.user;
