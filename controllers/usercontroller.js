@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../db");
 const { UserModel } = require("../models");
 const { UniqueConstraintError } = require("sequelize/lib/errors");
 
@@ -27,6 +26,7 @@ router.post("/register", async (req, res) => {
     }
   }
 });
+
 router.post("/login", async (req, res) => {
   let { username, passwordhash } = req.body.user;
 
@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
       message: "User successfully logged in!"
     });
   } else {
-    res.status(4.1).json({
+    res.status(401).json({
       message:'Login failed'
     });
   }
