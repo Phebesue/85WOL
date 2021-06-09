@@ -24,3 +24,9 @@ Line 8 added "let User =" but it is not bolded to indicate it is an addition
 
 https://elevenfifty.instructure.com/courses/694/pages/9-dot-2-6-error-handling?module_item_id=58227#:~:text=first%2C%20let's%20update%20our%20user%20create%20method%20in%20our%20usercontroller.js%20file.
 Image makes changes to code not discussed. line 7 now says "const User" was "let User". Also moves what is now line 5 up, was line 6 in previous 3 modules.
+
+https://elevenfifty.instructure.com/courses/694/assignments/13453#:~:text=take%20the%20time%20to%20reflect%20on%20the%20last%2072%20hours.%20
+24 Hr project says for the reflection, take time to reflect on the last 72 hrs..
+
+https://elevenfifty.instructure.com/courses/694/assignments/13453#:~:text=take%20the%20time%20to%20reflect%20on%20the%20last%2072%20hours.%20
+Says Red Badge assessment - this is Blue.
