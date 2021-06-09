@@ -11,9 +11,12 @@ router.post("/register", async (req, res) => {
       passwordhash,
     });
 
+    let token = jwt.sign({ id: User.id }, "ia_am_secret", {expiresIn: 60 * 60 * 24});
+
     res.status(201).json({
       message: "User sucessfully registered",
       user: User,
+      sessionToken: token,
     });
   } catch (err) {
     if (err instanceof UniqueConstraintError) {
@@ -30,27 +33,27 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   let { username, passwordhash } = req.body.user;
 
-  try{
+  try {
     let loginUser = await UserModel.findOne({
-    where: {
-      username: username,
-    },
-  });
+      where: {
+        username: username,
+      },
+    });
 
-  if (loginUser){
-    res.status(200).json({
-      user:loginUser,
-      message: "User successfully logged in!"
-    });
-  } else {
-    res.status(4.1).json({
-      message:'Login failed'
-    });
-  }
-} catch (error) {
+    if (loginUser) {
+      res.status(200).json({
+        user: loginUser,
+        message: "User successfully logged in!",
+      });
+    } else {
+      res.status(4.1).json({
+        message: "Login failed",
+      });
+    }
+  } catch (error) {
     res.status(500).json({
-      message: "Failed to log user in"
-    })
+      message: "Failed to log user in",
+    });
   }
 });
 
