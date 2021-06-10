@@ -13,9 +13,10 @@ const { authorization } = req.headers;
 console.log("authorization -->", authorization);
 const payload = authorization 
 ? jwt.verify(
-authorization.includes("Bearer")
-? authorization.split(" ")[1]
-: authorization, 
+// authorization.includes("Bearer")
+// ? authorization.split(" ")[1]
+// : 
+authorization, 
 process.env.JWT_SECRET
 )
 : undefined;
