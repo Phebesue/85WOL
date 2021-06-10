@@ -30,3 +30,6 @@ https://elevenfifty.instructure.com/courses/694/assignments/13453#:~:text=take%2
 
 https://elevenfifty.instructure.com/courses/694/assignments/13453#:~:text=take%20the%20time%20to%20reflect%20on%20the%20last%2072%20hours.%20
 Says Red Badge assessment - this is Blue.
+
+https://elevenfifty.instructure.com/courses/694/pages/12-dot-2-2-implementing-validatesession?module_item_id=58254#:~:text=there%20are%20a%20couple%20of%20ways%20we%20can%20implement%20this%20middleware%20function.
+Moved userController above logController.
