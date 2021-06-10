@@ -9,6 +9,7 @@ req.headers.authorization &&
 req.headers.authorization.includes("Bearer")
 ) {
 const { authorization } = req.headers; 
+console.log("authorization -->", authorization);
 const payload = authorization 
 ? jwt.verify(
 authorization.includes("Bearer")
@@ -18,11 +19,16 @@ process.env.JWT_SECRET
 )
 : undefined;
 
+console.log("payload -->", payload);
+
 if (payload) {
 let foundUser = await UserModel.findOne({ where:{ id: payload.id } });
+console.log("foundUser -->", foundUser);
 
 if (foundUser) {
+    console.log("request -->",);
     req.user = foundUser;
+    
      next();
     } else {
     res.status(400).send({ message: "Not Authorized" });
