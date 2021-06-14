@@ -33,3 +33,7 @@ Says Red Badge assessment - this is Blue.
 
 https://elevenfifty.instructure.com/courses/694/pages/12-dot-2-2-implementing-validatesession?module_item_id=58254#:~:text=there%20are%20a%20couple%20of%20ways%20we%20can%20implement%20this%20middleware%20function.
 Moved userController above logController.
+
+https://elevenfifty.instructure.com/courses/694/pages/12-dot-3-3-creating-a-journal-entry-post?module_item_id=58259#:~:text=add%20the%20following%20lines%20of%20code
+previously had students use const on lines 1 & 2, now using let. Consistency
+
