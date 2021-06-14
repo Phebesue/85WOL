@@ -11,7 +11,7 @@ const Log = db.define("log", {
   result: {
     type: DataTypes.STRING,
      },
-  owner_id: {
+  owner: {
     type: DataTypes.INTEGER,
    },
 });
