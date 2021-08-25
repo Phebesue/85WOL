@@ -32,8 +32,56 @@ router.post('/create', validateJWT, async (req, res) =>{
 
 });
 
-router.get("/about", (req, res)=> {
-    res.send("This is the about route!")
+/*
+========================
+        Get all Logs
+========================
+*/
+router.get("/", async (req, res) => {
+    try {
+        const entries = await LogModel.findAll();
+        res.status(200).json(entries);
+    } catch (err) {
+        res.status(500).json({error: err});
+   }
+});
+
+/*
+=========================
+    Get Logs by User
+=========================
+*/
+router.get("/mine", validateJWT, async (req, res) => {
+    let {id} = req.user;
+    try {
+        const userLogs = await LogModel.findAll({
+            where: {
+                owner: id
+            }
+        });
+        res.status(200).json(userLogs);
+    } catch (err) {
+        res.status(500).json({error: err});
+   }
+});
+
+/*
+=========================
+Get Logs by Description
+=========================
+*/
+router.get("/:description", validateJWT, async (req, res) => {
+    let {description} = req.params;
+    try {
+        const results = await LogModel.findAll({
+            where: {
+                description: id
+            }
+        });
+        res.status(200).json(userLogs);
+    } catch (err) {
+        res.status(500).json({error: err});
+   }
 });
 
 module.exports = router;
