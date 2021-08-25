@@ -115,4 +115,28 @@ router.put("/update/:entryId", validateJWT, async (req, res) => {
     }
 });
 
+/*
+=========================
+      Delete a Log
+=========================
+*/
+router.delete("/delete/:id", validateJWT, async (req, res) => {
+    const ownerId = req.user.id;
+    const logId = req.params.id;
+
+    try {
+        const query = {
+            where: {
+                id: logId,
+                owner: ownerId
+            }
+        };
+
+        await LogModel.destroy(query);
+        res.status(200).json({message:  "Log Entry Removed" });
+    } catch (err) {
+        res.status(500).json({ error: err });
+    }
+})
+
 module.exports = router;
