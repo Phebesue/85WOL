@@ -84,4 +84,35 @@ router.get("/:description", validateJWT, async (req, res) => {
    }
 });
 
+/*
+=========================
+      Update a Log
+=========================
+*/
+router.put("/update/:entryId", validateJWT, async (req, res) => {
+    const {description, definition, result} = req.body.log;
+    const logId = req.params.entryId;
+    const userId = req.user.id;
+
+    const query = {
+        where: {
+            id: logId,
+            owner: userId
+        }
+    };
+
+    const updatedLog = {
+        description: description,
+        definition : definition,
+        result : result
+    };
+
+    try {
+        const update = await LogModel.update(updatedLog, query);
+        res.status(200).json(update);
+    }catch (err) {
+        res.status(500).json({ error: err});
+    }
+});
+
 module.exports = router;
